@@ -25,3 +25,6 @@ class ItemModel(db.Model):
     def delete_from_db(self):
         db.session.delete(self)
         db.session.commit()
+
+    # def get_items(cls):
+    #     return cls.query*
