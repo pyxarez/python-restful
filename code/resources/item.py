@@ -69,7 +69,7 @@ class ItemList(Resource):
 
         query = f'SELECT * FROM {ItemList.TABLE_NAME}'
         result = cursor.execute(query)
-        items = list(map(lambda item: ItemModel(item[1], item[2]).json(), result))
+        items = list(map(lambda item: ItemModel(item[0], item[1]).json(), result))
         connection.close()
 
         return {'items': items}
